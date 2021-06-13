@@ -16,7 +16,7 @@ router.get('/', function (req, res) {
     res.send('<form method="post" action="/todo"><input id="task" name="task" style="margin-right:10px;"><input type="submit"></form>')
 })
 
-router.post('/todo', function (req, res) {
+router.post('/', function (req, res) {
     console.log(req.body)
     const sql = "INSERT INTO task(task) VALUES('" + req.body.task + "')"
     con.query(sql, function (err) {
@@ -26,7 +26,7 @@ router.post('/todo', function (req, res) {
     res.end()
 })
 
-router.delete('/todo/:id', function (req, res) {
+router.delete('/:id', function (req, res) {
     const sql = "DELETE FROM task WHERE id = " + req.params.id
     con.query(sql, function (err) {
         if (err) throw err
@@ -35,7 +35,7 @@ router.delete('/todo/:id', function (req, res) {
     res.end()
 })
 
-router.get('/todo', function (req, res) {
+router.get('/', function (req, res) {
     const sql = "SELECT * FROM task"
     con.query(sql, function (err, result) {
         if (err) throw err

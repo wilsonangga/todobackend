@@ -3,6 +3,7 @@ const cors = require('cors')
 const bodyParser = require('body-parser')
 const routerTodo = require('./routers/todo.js')
 const routerUser = require('./routers/users.js')
+const auth = require('./middleware/auth.js')
 
 var jsonParser = bodyParser.json()
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
@@ -20,8 +21,8 @@ app.use(jsonParser)
 app.use(urlencodedParser)
 app.use(cors(corsOptions))
 
-app.use(routerTodo)
-app.use(routerUser)
+app.use('/todo', auth, routerTodo)
+app.use('/user', routerUser)
 
 app.listen(3000)
 
