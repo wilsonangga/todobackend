@@ -12,9 +12,9 @@ con.connect(function (err) {
     if (err) throw err
 })
 
-router.get('/', function (req, res) {
-    res.send('<form method="post" action="/todo"><input id="task" name="task" style="margin-right:10px;"><input type="submit"></form>')
-})
+// router.get('/', function (req, res) {
+//     res.send('<form method="post" action="/todo"><input id="task" name="task" style="margin-right:10px;"><input type="submit"></form>')
+// })
 
 router.post('/', function (req, res) {
     console.log(req.body)

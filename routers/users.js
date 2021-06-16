@@ -37,8 +37,9 @@ router.post('/', function (req, res, next) {
     const check = "SELECT * FROM user WHERE username = '" + req.body.username + "'"
     con.query(check, function (err, result) {
         if (result.length > 0) {
-            // res.send("Username sudah ada")
-            return
+            res.status(401)
+            res.send("Username sudah ada")
+            return;
         } else {
             bcrypt.genSalt(saltRounds, function (err, salt) {
                 bcrypt.hash(req.body.password, salt, function (err, hash) {
@@ -46,12 +47,12 @@ router.post('/', function (req, res, next) {
                     con.query(sql, function (err) {
                         if (err) throw err
                         console.log("1 record inserted")
+                        res.end()
                     })
                 })
             })
         }
     })
-    res.end()
 })
 
 router.delete('/:id', auth, function (req, res) {
