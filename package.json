@@ -1,0 +1,31 @@
+{
+  "name": "todo-backend",
+  "version": "1.0.0",
+  "description": "tes package json",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wilsonangga/todobackend.git"
+  },
+  "keywords": [
+    "todofrontend"
+  ],
+  "author": "wilson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wilsonangga/todobackend/issues"
+  },
+  "homepage": "https://github.com/wilsonangga/todobackend#readme"
+}
